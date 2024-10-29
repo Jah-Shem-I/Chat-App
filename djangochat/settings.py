@@ -31,9 +31,9 @@ environ.Env.read_env("SECRET_KEY", default="change_me")
 SECRET_KEY = 'django-insecure-^@-hpfy-26!11p$79qw2zh#ibwmskb*g648f9$w6ch^q_23%af'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG", default=False)
+DEBUG = False #env("DEBUG", default=False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=["*"])
+ALLOWED_HOSTS = ["*"] #env.list('ALLOWED_HOSTS', default=["*"])
 
 
 # Application definition
@@ -85,7 +85,11 @@ WSGI_APPLICATION = 'djangochat.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db(default="sqlite:///db.sqlite3"),
+    # "default": env.db(default="sqlite:///db.sqlite3"),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 LOGGING = {
