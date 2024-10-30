@@ -4,7 +4,7 @@
 #
 
 app = 'djangochat'
-primary_region = 'atl'
+primary_region = 'den'
 console_command = '/code/manage.py shell'
 
 [build]
