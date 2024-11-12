@@ -1,1 +1,1 @@
-web: gunicorn djangochat.wsg
+web: gunicorn djangochat.wsgi
